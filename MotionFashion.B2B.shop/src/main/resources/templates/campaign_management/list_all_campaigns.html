@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>List all campaigns</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="sorting.js">
+
+		<style type="text/css">
+
+		input[type=search]{
+			float: right;
+			margin-right: 5px;
+			border-radius: 10px;
+			outline: 0;
+		}
+
+		h2{
+			margin-left: 8px;
+		}
+
+		h4{
+			margin-left: 8px;
+		}
+	
+		button, input, select, textarea{
+			border-radius: 10px;
+			outline: 0;
+		}
+
+		table {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  background: #CBD6D5;
+		  width: 100%;
+		}
+
+		th{
+	      padding-left: 8px;
+	      padding-right: 8px;
+	      padding-top: 2px;
+	      padding-bottom: 2px;
+	      border: 1px solid white; 
+	    }
+		#sort{
+			float: right;
+			border: none;
+			background: #CBD6D5;
+		}
+
+		hr{
+            border: 2px solid #CBD6D5;
+        }
+		</style>
+
+
+	</head>
+
+	<body>
+		<h2>CAMPAIGN MANAGEMENT</h2>
+		<h4>10 CAMPAIGNS TOTAL</h4>
+		<hr>
+		   <div class="container-fluid">
+		   <div class="row">
+		   	<div class ="col-lg-10 col-md-6">
+		   			Show
+					<select id="options">
+					  <option value="volvo">10</option>
+					  <option value="saab">25</option>
+					  <option value="opel">50</option>
+					  <option value="audi">100</option>
+					</select>
+					  entries
+		   		</div>	
+		   		<!--search box -->
+		   		<div class="col-lg-2 col-md-6" id="searchButton">
+		   			 <input type="search" placeholder="Search.."> 
+		   			</div>
+		   		</div>
+	
+		    
+		    
+		    <br>
+
+		    	
+			<div class="row">
+				<div class="col-md-12  col-sm-6">
+				<table>
+				    <thead>
+				    	<tr>
+				        <th>Teaser
+				        	<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        	<ul>
+				        </th>
+				        <th>Status
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Title
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Subtitle
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Created at
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Author
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Products
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <th>Images
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				        <td>Actions
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+				        </th>
+				      </tr>
+
+				    </thead>
+				</table>
+			</div>
+			</div>
+			</div>
+	</body>
+	</html>	

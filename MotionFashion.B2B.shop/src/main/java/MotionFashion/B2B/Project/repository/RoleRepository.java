@@ -1,0 +1,14 @@
+package MotionFashion.B2B.Project.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import MotionFashion.B2B.Project.model.Role;
+
+
+
+@Repository("roleRepository")
+public interface RoleRepository extends JpaRepository<Role, Integer> {
+    Role findByRole(String role);
+
+}

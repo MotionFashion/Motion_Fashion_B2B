@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>List all campaigns</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="sorting.js">
+
+		<style type="text/css">
+
+		input[type=search]{
+			float: right;
+			margin-right: 5px;
+			border-radius: 10px;
+			outline: 0;
+		}
+
+		h2{
+			margin-left: 8px;
+		}
+
+		h4{
+			margin-left: 8px;
+		}
+	
+		button, input, select, textarea{
+			border-radius: 10px;
+			outline: 0;
+		}
+		button{
+		background: #CBD6D5;
+		border:none;
+		float:right;
+		}
+
+		table {
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  
+		  width: 100%;
+		}
+
+		th{
+	      padding-left: 8px;
+	      padding-right: 8px;
+	      padding-top: 2px;
+	      padding-bottom: 2px;
+	      border: 1px solid white;
+	      background: #CBD6D5;
+	    }
+		tr:nth-child(even){background-color: #f2f2f2;}
+	    
+	    
+	    }
+	
+
+		hr{
+            border: 2px solid #CBD6D5;
+        }
+
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a.focus, .nav-tabs>li.active>a:hover{
+          border-top: 4px solid #CBD6D5;
+    }
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+	 	<h2>EDIT CAMPAIGN</h2>
+	    <h4>NEW CAMPAIGN</h4>
+	    <hr>
+
+	    
+
+	    	<ul class="nav nav-tabs">
+		      <li><a href="campaign_information.html">Campaign Information</a></li>
+		      <li class="active"><a href="#">Products</a></li>
+		      <li><a href="settings.html">Settings</a></li>
+		    </ul>
+
+		    <br>
+
+		   <div class="container-fluid">
+		   <div class="row">
+		   	<div class ="col-lg-10 col-md-6">
+		   			Show
+					<select id="options">
+					  <option value="volvo">10</option>
+					  <option value="saab">25</option>
+					  <option value="opel">50</option>
+					  <option value="audi">100</option>
+					</select>
+					  entries
+		   		</div>	
+		   		<!--search box -->
+		   		<div class="col-lg-2 col-md-6" id="searchButton">
+		   			 <input type="search" placeholder="Search.."> 
+		   			</div>
+		   		</div>
+		    
+		    <br>
+
+			<div class="row">
+				<div class="col-md-12  col-sm-6">
+			<form  th:action="@{/campaign/add_product_to_campaign}" th:object="${product}" method="POST" >
+				<table>
+				    <thead>
+				    	<tr>
+				    	<th>
+				        </th>
+
+				        <th>Article Number</th>
+						<th>Brand</th>
+						<th>Description</th>
+				        <th>Net Buying Price</th>
+						<th>Gender</th>
+						<th>ACountry of Origin</th>
+				        <th>Weight</th>
+						<th>Material Composition</th>
+						<th>Customers Tariff Number</th>
+							
+				      </tr>
+				      
+				       <tr th:each="product : ${products}">
+				     <td>  <input type="checkbox" th:name="idChecked" th:value="${product.id}" /></td>
+				       		<td th:text="${product.articleNumber}">
+				       		<td th:text="${product.brand}">
+				       		<td th:text="${product.description}">
+				       		<td th:text="${product.retailPrice}">
+				       		<td th:text="${product.gender}">
+				       		<td th:text="${product.originCountryId}">
+				       		<td th:text="${product.weight}">
+				       		<td th:text="${product.materialComposition}">
+				       		<td th:text="${product.customsTariffNumber}">
+				      </tr>
+				      
+				      
+
+				    </thead>
+				</table>
+				
+				  <div class="row">
+				  <input type="hidden" name="campaign_id" th:value="${campaign.campaign_id}" />
+             				
+                          <input type="submit" value="save">
+              </div>
+				
+			</form>
+			</div>
+			</div>
+			</div>
+	</body>
+	</html>	

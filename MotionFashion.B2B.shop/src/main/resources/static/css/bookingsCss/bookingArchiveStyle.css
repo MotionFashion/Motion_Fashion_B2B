@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+   div#body1 {
+        background-color: white;
+        }
+
+    h2{
+      margin-left: 8px;
+    }
+
+    table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #CBD6D5;
+      width: 100%;
+    }
+
+   th{
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border: 1px solid white; 
+    }
+
+    hr{
+        border: 2px solid #CBD6D5;
+        }
+
+   

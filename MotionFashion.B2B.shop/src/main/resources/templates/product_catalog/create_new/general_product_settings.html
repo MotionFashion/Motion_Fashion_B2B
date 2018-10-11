@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Product Catalog | Details</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/product_catalogCss/productSettingsStyle.css}">
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+  <h2>EDIT PRODUCT</h2>
+  
+  <h4>NEW PRODUCT</h4>
+  <hr>
+  
+   <ul class="nav nav-tabs">
+      <li class="active"><a href="/product_catalog/settings">General Product Settings</a></li>
+      <li><a href="/product_catalog/details">Details</a></li>
+    </ul>
+
+			<form class="main_form">
+       
+          <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-6" >
+                <label for="product">Product descriptions</label><br>
+                <textarea id="product" name="product" placeholder="New product"></textarea><br>
+                <label for ="article">Article number</label><br>
+                <input type="text" name="article"><br>
+               <label for ="ean">EAN</label><br>
+                <input type="text" name="ean"><br>
+
+                <label for ="sku">SKU</label><br>
+                <input type="text" name="sku"><br>
+              </div>
+
+
+              <div class="col-md-6">
+                  <label for="purchase_price">Purchase price</label><br>
+                  <input type="text" name="Purchase_price" ><span> EURO</span><br>
+                  <label >Available quantity</label><br>
+                  <input type="text" name="Available_quantity"><br>
+									<label ><span class="glyphicon glyphicon-info-sign"></span>Changing available product quantity will affect upcoming product bookings.<span></lable>
+									
+              </div>
+          </div>
+      
+          <hr>
+          <div class="row">
+            <button class="btn btn-success" type="submit" id="btn">Next >></button>
+          </div>
+
+		 </div>
+        </form>
+		 
+	<div th:include="footer_admin :: copy"></div>
+</body>
+</html>

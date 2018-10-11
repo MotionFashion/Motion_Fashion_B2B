@@ -1,0 +1,24 @@
+@charset "ISO-8859-1";
+
+
+	/* ******************************booking rules here*************************************** */
+	
+			div#body1{
+				background-color: #FFF;
+			}
+			
+			.input-group .form-control {
+			    margin: 0px !important;
+			}
+			
+			.btn-success{
+      	margin-top: 20px;
+      	margin-right: 43%;
+      	float: right;
+      }
+      
+      .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover{
+          border-top: 4px solid #CBD6D5;
+    }
+		/* ******************************booking rules css ends here*************************************** */
+

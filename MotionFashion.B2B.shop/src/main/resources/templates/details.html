@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new</title>
+		 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+     <style>
+
+     .profile_page_common_topnav {
+       overflow: hidden;
+       background-color: white;
+
+     }
+     .profile_page_common_topnav a {
+       float: left;
+       color: black;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+       font-size: 17px;
+     }
+
+     .profile_page_common_topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .profile_page_common_topnav a.active {
+        background-color: #dadee5;
+        color: black;
+    }
+.main_form{
+  margin-top: 52px;
+
+  background-color: #dadee5;
+}
+.row{
+  margin-left: 5px;
+}
+.row input[type="submit"] {
+
+
+  width: 150px;
+  height: 40px;
+	 border-radius: 10px;
+	 background-color:#edebe1 ;
+	 margin-left: 10px;
+}
+.col-md-6 input[type="text"]{
+  width: 955;
+  height: 40px;
+}
+
+textarea{
+  width: 100%;
+  height: 90px;
+}
+/*-----------------------------------------------------------------------------------------*/
+
+
+     </style>
+
+
+</head>
+<body>
+  <div class="container-fluid">
+  <h3>EDIT PRODUCT</h3>
+
+  <h4>NEW PRODUCT</h4>
+
+  <hr>
+  <div class="profile_page_common_topnav">
+    <a  href="#">General Product Settings</a>
+    <a class="active" href="#home">Details</a>
+			<div class="main_form">
+        <form th:object="${product}" th:action="@{/products/update_2}" method="POST">
+          <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-6">
+                 <div class="form-group">
+                  <label for="brand">Brand</label>
+                  <input type="text" class="form-control" id="brand"	th:field="*{brand}">
+                </div>
+
+                <div class="form-group">
+                    <label for="originCountryId">Origin Country</label>
+                    <input type="text" class="form-control" th:field="*{originCountryId}">
+
+                </div>
+
+                   <div class="form-group">
+                  <label for="genderId">Gender</label>
+                  <input type="text" class="form-control" th:field="*{genderId}">
+                  </div>
+
+
+              </div>
+
+
+              <div class="col-lg-6 col-md-6">
+                   <div class="form-group">
+                  <label for="size">Size</label>
+                  <input type="text" class="form-control" th:field="*{size}">
+                </div>
+                   <div class="form-group">
+                  <label for="color">Color</label>
+                  <input type="text" class="form-control" th:field="*{color}">
+                </div>
+                   <div class="form-group">
+                  <label for="weight">Weight</label>
+                  <input type="text" class="form-control" th:field="*{weight}">
+                </div>
+                  <div class="form-group">
+                  <label for="retailPrice">Retail Price</label>
+                  <input type="number" class="form-control" th:field="*{retailPrice}">
+                </div>
+                   <div class="form-group">
+                  <label for="customsTariffNumber">Customer Tarif Number</label>
+                  <input type="text" class="form-control" th:field="*{customsTariffNumber}">
+                </div>
+                   <div class="form-group">
+                  <label for="materialComposition">Material Composition</label><br>
+                  <textarea id="materialComposition" name="materialComposition"  th:field="*{materialComposition}"></textarea><br>
+                </div>
+                   <div class="form-group">
+                  <label for="usr">Care Instructions</label><br>
+                  <textarea id="careInstructions" name="careInstructions"  th:field="*{careInstructions}"></textarea><br>
+                </div>
+                   <div class="form-group">
+                  <label for="usr">Additional Information</label><br>
+                  <textarea id="additionalInformation" name="additionalInformation"  th:field="*{additionalInformation}"></textarea><br>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="row">
+        	 <input type="hidden" name="id" th:value="${product.id}" />
+          <button type="submit" name="save" class="btn btn-success">Save product ></button>
+        </div>
+        </form>
+
+
+			</div>
+      </div>
+</div>
+<hr>
+
+
+</body>
+</html>

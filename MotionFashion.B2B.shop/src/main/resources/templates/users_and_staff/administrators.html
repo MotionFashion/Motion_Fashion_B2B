@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Administrators</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/users_and_staffCss/administratorsStyle.css}">
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+	
+        <h2>ADMINISTRATORS</h2>
+<!--*****************************************************Modal starts here************************************************* -->
+
+     <button class="btn btn-primary" id="modalButton" data-toggle="modal" data-target="#myModal">Add a New Member</button>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal_header">New Staff Member</h2>
+
+          <hr>
+
+          <div class="modal-body">
+
+                   <form class="form-group">
+                        <label for="fname">First Name<span class="required">*</span></label><br>
+                        <input type="text" name="fname" required><br>
+
+                         <label for="lname">Last Name<span class="required">*</span></label>
+                        <input type="text" name="lname" required><br>
+
+                         <label for="email">Email Address<span class="required">*</span></label>
+                        <input type="text" name="email" required><br>
+
+                         <label for="pnumber">Phone Number</label>
+                        <input type="text" name="pnumber"><br>
+
+                         <label for="role">Role / Department</label>
+                        <input type="text" name="role"><br>
+
+                         
+                        <div class="form-group">
+                          <label for="type">Staff Type</label>
+                              <select class="form-control" id="country">
+                                <option>Consultant</option>
+                                <option>Administrator</option>
+                              
+                            </select>
+                        </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Cancel</button>
+                    <input type="submit" class="btn btn-success" value="Save">
+
+                    
+                  </div>
+                  </form>
+            
+          </div><!-- End of modal-body-->
+        </div><!-- End of modal-header-->
+      </div><!-- End of modal-content-->
+    </div><!-- End of modal-dialog-->
+  </div> <!-- End of modal-->
+    <!--*****************************************************Modal ends here************************************************* -->  
+        <hr>
+        
+           <div class="container-fluid" id="body1">
+           <div class="row">
+            <div class ="col-lg-10 col-md-6" id="selectionBox">
+                    <select id="options" name="options">
+                      <option value="volvo">10</option>
+                      <option value="saab">25</option>
+                      <option value="opel">50</option>
+                      <option value="audi">100</option> 
+                    </select>
+                     
+                </div>  
+                <!--search box -->
+                <div class="col-lg-2 col-md-6" id="searchBox">
+                     <input type="search" placeholder="Search.."> 
+                    </div>
+                </div>
+            <br>
+
+
+                
+            <div class="row">
+                <div class="col-md-12  col-sm-6">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>ID
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        
+                        <th>Staff Type
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>First Name
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Last Name
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Role
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+
+                        <th>Email
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Phone
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        
+                        <th>Created
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Actions
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                       
+                      </tr>
+
+                    </thead>
+                </table>
+                <ul class="pager">
+                <li class="previous"><a href="#">Previous Page</a></li>
+                <li class="next"><a href="#">Next Page</a></li>
+              </ul>
+            </div>
+            </div>
+            </div>
+            
+            <div th:include="footer_admin :: copy"></div>
+    </body>
+    </html> 

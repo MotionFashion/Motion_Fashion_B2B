@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Request a Campaigns</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/campaignsStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/campaignsCss/requestCampaignStyle.css}">
+</head>
+
+
+<body>
+	
+	
+	<div th:include="header_admin :: copy"></div>
+	
+	
+<div><h2>REQUEST A CAMPAIGN</h2></div>
+	<br>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-25">
+				<hr class="hr1">
+				<div class = "thumbnail"><img src="../images/team.jpg"></div>
+				<p>You want an individual assortment of our clothing items? Please tell us your needs and objectives for the collection that we can provide as a campaign for you.</p> 
+				<br>
+				<p>To offer you the best possible compilation, we need some information on the occasion and theme of your products.</p>
+
+			</div>
+
+			<div class="col-75">
+				<hr class="hr2">
+				<h3>Your campaign interests</h3>
+
+
+				<form class="labels">
+			        <div class="row">
+			      <div class="col-25">
+			        <label for="fname">Target audience</label>
+			      </div>
+			      <div class="col-75">
+
+
+			        <input list="browsers" name="browser">
+					  <datalist id="browsers">
+					    <option value="Male">
+					    <option value="Female">
+					    <option value="Kid">
+					    <option value="Unisex">
+					    
+					  </datalist>
+
+			      </div>
+			    </div>
+
+
+
+
+			    <div class="row">
+			      <div class="col-25">
+			        <label for="Theme">Theme/Occasion</label>
+			      </div>
+			      <div class="col-75">
+			        <input type="text" id="Theme" name="Theme" placeholder="Theme/Occasion..">
+			      </div>
+			    </div>
+
+			      <div class="row">
+			      <div class="col-25">
+			        <label for="price">Favored price range</label>
+			      </div>
+			      <div class="col-75">
+			        <input type="text" id="price" name="price" placeholder="Price range..">
+			      </div>
+			    </div>
+    
+    
+		       <div class="row">
+			      <div class="col-25">
+			        <label for="brand">Favored brand(s)</label>
+			      </div>
+			      <div class="col-75">
+			        <input type="text" id="brand" name="brand" placeholder="Brand name..">
+			      </div>
+			    </div>
+   
+		    <div class="row">
+		      <div class="col-25">
+		        <label for="subject">Send detail information about your objectives</label>
+		      </div>
+		      <div class="col-75">
+		        <textarea id="subject" name="subject" placeholder="Write something.." style="height:180px"></textarea>
+		      </div>
+		    </div>
+		    
+		    <div class="row">
+		      <strong>Send Copy</strong>
+		      <input type="checkbox" name="checkbox"> Send me copy of this request to my email address (r.rahmann@motion-fashion.de)<br>
+		    </div>
+		    
+
+		      <button class="btn btn-success" type="submit">Send request to motion fashion network</button> 
+		        </form>
+
+        		<hr>
+
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	<div th:include="footer_admin :: copy"></div>
+
+
+
+</body>
+</html>

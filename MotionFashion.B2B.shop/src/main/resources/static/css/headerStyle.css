@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* logo*/
+    .navbar-brand{
+      height: 60px;
+      padding-top: 1px;
+      padding-left: 0px;
+      padding-right: 5px;
+    }
+
+    .container-fluid{
+      background-color: #E1E5E6;
+      border: none;
+    }
+    
+    img{
+    width:80%;
+    padding-left: 10px;
+    padding-top: 5px;
+    }
+
+   
+    .navbar{
+      border: none;
+      margin-bottom: 1px;
+    }
+
+    .navbar-inverse .navbar-nav >li>a{
+      color: #131212;
+
+    }
+
+    .navbar-nav >li>a{
+      padding-top: 20px;
+      
+    }
+
+    #menuBar{
+      margin-right: 0;
+     
+
+    }

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.navbar-default{
+	height:60px;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;
+	padding-left:140px;
+	padding-top:2px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>product list</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+.container{
+  border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+}
+
+.select_div  input[type=text]{
+  float: right;
+}
+.select_div  label{
+  float: right;
+}
+.table_class {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+    width: 100%;
+}
+
+.table_class td, #customers th {
+
+    padding: 8px;
+}
+
+.table_class tr:nth-child(even){background-color: #f2f2f2;}
+
+.table_class tr:hover {background-color: #ddd;}
+
+.table_class th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #585858;
+    color: white;
+}
+</style>
+	
+</head>
+
+<body>
+	<h1>Articles Table</h1>
+	 <table class="table_class">
+      
+       <!-- Header Table -->
+      
+            <tr>
+                <th>Article number</th>
+                <th>Articles</th>
+                <th>Description</th>
+                <th>Qty.</th>
+                <th>Net buying price</th>
+                <th>Brand</th>
+                <th>Gender</th>
+                <th>Country of origin</th>
+                <th>Weight</th>
+                <th>Customs tariff number</th>
+                <th>Action</th>
+              </tr>
+      
+           <tr th:each="product : ${products}">
+        
+	               <td th:text="${product.id}">
+	               <td th:text="${product.articleNumber}">
+	               <td th:text="${product.quantity}">
+	               <td th:text="${product.description}">
+	               <td th:text="${product.retailPrice}">
+	               <td th:text="${product.brand}">
+               	   <td th:text="${product.genderId}">
+	               <td th:text="${product.originCountryId}">
+	               <td th:text="${product.weight}">
+	               <td th:text="${product.customsTariffNumber}">
+                <td>
+                        <a href="/products/edit_1/1" th:href="@{/products/edit_1/__${product.id}__}" class="w3-button w3-green">Edit</a>
+                        <a href="/products/edit_1/1" th:href="@{/products/edit_1/__${product.id}__}" class="w3-button w3-red">Delete</a>
+                </td>
+               
+            </tr>
+        
+    </table>
+    
+</body>
+</html>

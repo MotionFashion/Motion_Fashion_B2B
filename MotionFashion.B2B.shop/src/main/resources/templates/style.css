@@ -1,0 +1,29 @@
+img{
+	height:33px;
+	padding-top: 0px;
+	margin-top: 0px;
+}
+
+.container-fluid{
+	margin-top: -20px;
+}
+
+.account{
+	float: right;
+	height:33px;
+	padding-top: 0px;
+	padding-right: 8px;
+	margin-top: 0px;
+	margin-top: -30px;
+	color: black;
+}
+
+.campaign{
+	float: left;
+	height:33px;
+	padding-top: 0px;
+	padding-right: 8px;
+	margin-top: 0px;
+	margin-top: -30px;
+	color: black;
+}

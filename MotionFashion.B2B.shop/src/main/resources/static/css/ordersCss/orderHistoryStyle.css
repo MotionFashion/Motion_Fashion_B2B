@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+
+    h2{
+      margin-left: 8px;
+    }
+
+    h4 {
+      margin-left: 8px;
+    }
+
+    table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #CBD6D5;
+      width: 100%;
+    }
+
+   th{
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      border: 1px solid white; 
+    }
+
+    hr{
+        border: 2px solid #CBD6D5;
+        }
+
+      .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover{
+          border-top: 4px solid #CBD6D5;
+
+        }
+
+   

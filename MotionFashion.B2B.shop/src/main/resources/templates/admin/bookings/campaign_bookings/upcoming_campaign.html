@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Upcoming Bookings</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bookingsCss/upcomingCampaignsStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+
+    <h2>BOOKED CAMPAIGNS</h2>
+    <h4>0 UPCOMMING CAMPAIGNS</h4>
+
+    <hr>
+
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="/bookings/upcoming_campaign">Upcoming Campaigns</a></li>
+        <li><a href="/bookings/starting_soon">Starting Soon</a></li>
+        <li><a href="/bookings/bookings_archive">Booking Archive</a></li>
+      </ul>
+      <br>
+      
+       <div class="container-fluid">    
+      <div class="row">
+        <div class="col-md-12  col-sm-6">
+        <table>
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Reservation</th>
+                <th>Start Date</th>
+                <th>End date</th>
+                <th>Order placement until</th>
+                <th>Action</th>
+              </tr>
+
+            </thead>
+        </table>
+      </div>
+      </div>
+      </div>
+      <div th:include="footer_admin :: copy"></div>
+  </body>
+  </html> 

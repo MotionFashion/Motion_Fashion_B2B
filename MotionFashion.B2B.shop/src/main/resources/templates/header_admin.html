@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+
+
+  <title>B2B Header</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+
+  <style type="text/css">
+  .navbar-inverse{
+  	background-color: #d3d3d34d;
+  	height: 80px;
+  	border: none;
+  	
+  }
+
+  .navbar-inverse .navbar-nav>li>a{
+  	color: black;
+  }
+
+  </style>
+
+
+</head>
+<body>
+
+<div th:fragment="copy">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" id="header">
+  	<div class="row">
+  		<div class="col-lg-2 col-sm-6">
+    
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/adminPage/index"><img src="/images/logo.png"></a>
+    </div>
+    </div>
+
+   <div class="col-lg-9 col-sm-6">
+    <ul class="nav navbar-nav">
+      
+      <li class="dropdown" id="menuBar"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-folder-open"></span> Campaigns <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/campaigns_admin/new_campaigns">New Campaigns</a></li>
+          <li><a href="/campaigns_admin/campaign_search">Campaign Search</a></li>
+          <li><a href="/campaigns_admin/private_campaign">Private Campaigns</a></li>
+          <li><a href="/campaigns_admin/request_campaign">Request a Campaign</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-calendar"></span> Bookings <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/bookings_admin/upcoming_campaign">Campaign Bookings</a></li>
+          <li><a href="/bookings_admin/accepted_bookings">Accepted Bookings</a></li>
+          <li><a href="/bookings_admin/booking_archive">Booking Archive</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th-list"></span> Orders <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/orders_admin/place_order">Place Order</a></li>
+          <li><a href="/orders_admin/order_history">Order History</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-envelope"></span> Billing and Invoices<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/billing_admin/invoice">Invoices</a></li>
+          <li><a href="/billing_admin/pending_payments">Pending Payments</a></li>
+        </ul>
+      </li>
+
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Product Catalog <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/product_catalog/products">Products</a></li>
+          <li><a href="/product_catalog/settings">Create New</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Bookings and Purchases <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/booking_and_purchases/inquiry_requests">Inquiry Requests</a></li>
+          <li><a href="/booking_and_purchases/booking_conflicts">Booking Conflicts</a></li>
+          <li><a href="/booking_and_purchases/shipping">Shipping</a></li>
+          <li><a href="/booking_and_purchases/payed_invoice">Invoices and Payments</a></li>
+        </ul>
+      </li>
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Campaign Management <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">List all campaigns</a></li>
+          <li><a href="#">Add Public Campaigns</a></li>
+          <li><a href="#">Add Private Campaign</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">User and Staff<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/users_and_staff/customer_management">Customer Management</a></li>
+          <li><a href="/users_and_staff/consultants">Consultants</a></li>
+          <li><a href="/users_and_staff/administrators">Administrators</a></li>
+          
+          <li><a href="/users_and_staff/common">Create New</a></li>
+          
+        </ul>
+      </li>
+
+      <li><a href="/countries/country">Country</a></li>
+
+    </ul>
+    </div>
+
+	<div class="col-lg-1 col-sm-6">
+    <ul class="nav navbar-nav navbar-right navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"> Account</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/profile_admin/common"><span class="glyphicon glyphicon-king"></span> Profile</a></li>
+          <li><a href="/profile_admin/addresses"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+    </div>    
+
+    </div>
+  </div>
+</nav>
+
+</div>
+
+</body>
+</html>

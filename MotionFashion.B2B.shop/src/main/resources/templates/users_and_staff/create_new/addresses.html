@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | User and Staff | Addresses</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/myProfileCss/addressesStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+	
+  <div class="container-fluid" id="field">
+    <div class="row">
+    <h3>EDIT USER PROFILE</h3>
+    <h4>MOHAMMAD RAYHANUR RAHMAN</h4>
+    
+    <hr>
+    
+   <ul class="nav nav-tabs">
+      <li><a href="/users_and_staff/common">Common</a></li>
+      <li class="active"><a href="/users_and_staff/address">Addresses</a></li>
+      <li><a href="/users_and_staff/user_administrator">User Administration</a></li>
+      <li><a href="/users_and_staff/booking_rules"><span class="glyphicon glyphicon-cog"></span> Booking Rules</a></li>
+    </ul>
+    </div> <br>
+    
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <p><span class="glyphicon glyphicon-star"></span> Create a new address</p>
+
+        <hr class="hr2">
+            <div class="fields">
+              <form>
+                <label for ="description">Address description</label>
+                <input type="text" name="description" class="input"> <br>
+                <hr>
+               <label for ="company">Company</label>
+                <input type="text" name="company" class="input"><br><br>
+
+                <label for ="person">Contact Person</label>
+                <input type="text" name="person" class="input"><br><br>
+
+                <label for ="street">Street</label>
+                <input type="text" name="street" class="input"><br><br>
+
+                <label for ="city">City</label>
+                <input type="text" name="city" class="input"><br><br>
+                
+                <label for ="zip">Zip Code</label>
+                <input type="text" name="zip" class="input"><br><br>
+                
+                <label for ="country">Country</label>
+                <input type="text" name="country" class="input"><br><br>
+
+              <hr class="hr3">
+               
+              <button type="submit" name="save" class="btn btn-success">Save Profile</button>
+              <br>   
+		</form>
+
+		
+      </div>
+      
+    </div>
+	</div>
+	<br>
+	<br>
+	<br>
+  </div>
+  
+  <div th:include="footer_admin :: copy"></div>
+  <body>
+</html>

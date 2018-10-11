@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Booking Conflicts</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/booking_and_purchasesCss/bookingConflictsStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+    <h2>PRODUCT BOOKING CONFLICTS</h2>
+    <h4>CONFLICTS UP TO 2018-10-08</h4>
+
+    <div class="container-fluid" id="body1">
+      <div class="row">
+        <div class="col-lg-2">
+
+          <button class="btn btn-info" type="reset" id="btn1">
+            <span class="glyphicon glyphicon-ok"></span>
+             Auto Solve Conflicts
+          </button>
+       </div>
+      
+      <div class="col-lg-6">
+      </div>
+       <div class="col-lg-4" id="show">
+        <strong>Show Conflicts For Next</strong>
+          <select id="options">
+           <option value="volvo">One weeks</option>
+            <option value="saab">Two week</option>
+              <option value="opel">Three Weeks</option>
+              <option value="audi">One Month</option>
+              <option value="opel">Three Months</option>
+              <option value="audi">Semester</option>
+              </select>
+              <button type="button" class="btn btn-default" id="btn2">Show</button>
+           </div>  
+         
+
+       </div>
+
+       <hr>
+       <hr>
+
+       <button type="reset" class="btn btn-success">Solve Conflicts <span class="glyphicon glyphicon-ok"></span></button>
+
+      </div>
+    
+    <div th:include="footer_admin :: copy"></div>
+  </body>
+  </html> 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Admin | Customer Management</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/users_and_staffCss/customer_managementStyle.css}">
+</head>
+
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+        <h2>USER LIST</h2>
+      
+        <hr>
+           <div class="container-fluid" id="body1">
+           <div class="row">
+            <div class ="col-lg-10 col-md-6" id="selectionBox">
+                    
+                    <select id="options">
+                      <option value="volvo">10</option>
+                      <option value="saab">25</option>
+                      <option value="opel">50</option>
+                      <option value="audi">100</option>
+                    </select>
+                     
+                </div>  
+                <!--search box -->
+                <div class="col-lg-2 col-md-6" id="searchBox">
+                     <input type="search" placeholder="Search.."> 
+                    </div>
+                </div>
+    
+            
+            
+            <br>
+
+                
+            <div class="row">
+                <div class="col-md-12  col-sm-6">
+                <table>
+                    <thead>
+                        <tr>
+                        <th>ID
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        
+                        <th>Role
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>First Name
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Last Name
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Company
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+
+                        <th>Email
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Phone
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Blocking Hours
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        
+                        <th>Created
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                        <th>Actions
+                            <button onclick="sortListDir()" id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+                        </th>
+                       
+                      </tr>
+
+                    </thead>
+                </table>
+            </div>
+            </div>
+            </div>
+            
+            <div th:include="footer_admin :: copy"></div>
+    </body>
+    </html> 

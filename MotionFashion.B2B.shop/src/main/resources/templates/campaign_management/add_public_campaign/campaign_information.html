@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Campaign information</title>
+
+	   <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <style type="text/css">
+  	#pic{
+  		margin-left: 17.5%;
+  	}
+
+  	#thumbnail{
+  		width: 220px;
+  		height: 80px;
+  		margin-left: 60%;
+  		margin-top: 0px;
+  		border: 1px solid;
+  	}
+
+  	#check{
+  		margin-left: 60%;
+  	}
+
+  	.col-lg-4{
+  		margin-left: 0px;
+  		padding-left: 10px;
+  	}
+  	#upload{
+  		margin-left: 10px;
+  	}
+
+  	.col-md-12{
+  		width: 60%;
+  	}
+  	.images{
+  		margin-left: 360px;
+  	}
+  	input[type=file]{
+  		margin-left: 10px;
+  	}
+
+  	 hr{
+            border: 2px solid #CBD6D5;
+        }
+
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover{
+          border-top: 4px solid #CBD6D5;
+    }
+
+
+
+  </style>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+ 	<h3>EDIT EDIT CAMPAIGN</h3>
+    <h4>NEW CAMPAIGN</h4>
+    <hr>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Campaign Information</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+
+    <br>
+  <form>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="text">Campaign Title</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="text" name="text">
+      </div>
+    </div>
+   
+  
+ <div class="form-group">
+      <label class="control-label col-sm-2" for="text">Subtitle</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="text" name="text"> 
+      </div>
+    </div> 
+
+  </form>
+</div>
+
+
+	<div class="teaserImage">
+    	<input type="file" name="pic" id="pic">
+    	<img src="logo.png" id="thumbnail"><br>
+    	<input type="checkbox" id="check"> <strong>Remove this image</strong>
+  	</div>
+
+  	<br>
+  	<br>
+
+  	
+
+  	<h4 class="images">Campaign images</h4>
+  	<hr>
+
+  	<div class="container-fluid">
+      <form>
+  		<div class = "row">
+  			<div class="col-lg-4"  id ="upload">
+  				<p><strong>Upload new images</strong></p>
+  				<div class="row">
+  					<div class="col-lg-4">
+  						<strong>Image # 1</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 2</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 3</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 4</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 5</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 6</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 7</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+  				<div class="row">
+  					<div class="col-lg-4"><strong>Image # 8</strong></div>
+  					<br>
+  					<input type="file" name="pic" id="picUpload">
+  				</div>
+
+  				<hr>
+
+  				<button type="submit" name="save" class="btn btn-success">Save Campaign</button>
+          
+  			</div>
+        </form>
+
+  			<div class="col-md-12">
+  				<p><strong>Gallery</strong></p>
+  				<div class="row">
+
+  					  <div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/lights.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					  <div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/nature.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					    <div class="col-md-4">
+						    <div class="thumbnail" >
+						      <a href="https://www.w3schools.com/w3images/fjords.jpg" target="_blank">
+						        <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjords" style="width:100%">
+						        <div class="caption">
+						          <p>Lorem ipsum...</p>
+						        </div>
+						      </a>
+						    </div>
+						  </div>
+
+  				</div>
+
+  				<div class="row">
+					<div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/lights.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					  <div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/nature.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					    <div class="col-md-4">
+						    <div class="thumbnail" >
+						      <a href="https://www.w3schools.com/w3images/fjords.jpg" target="_blank">
+						        <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjords" style="width:100%">
+						        <div class="caption">
+						          <p>Lorem ipsum...</p>
+						        </div>
+						      </a>
+						    </div>
+						  </div>
+
+  				</div>
+  				<div class="row">
+
+  					  <div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/lights.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					  <div class="col-md-4">
+					    <div class="thumbnail">
+					      <a href="https://www.w3schools.com/w3images/nature.jpg" target="_blank">
+					        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
+					        <div class="caption">
+					          <p>Lorem ipsum...</p>
+					        </div>
+					      </a>
+					    </div>
+					  </div>
+
+					    <div class="col-md-4">
+						    <div class="thumbnail" >
+						      <a href="https://www.w3schools.com/w3images/fjords.jpg" target="_blank">
+						        <img src="https://www.w3schools.com/w3images/fjords.jpg" alt="Fjords" style="width:100%">
+						        <div class="caption">
+						          <p>Lorem ipsum...</p>
+						        </div>
+						      </a>
+						    </div>
+						  </div>
+  				</div>
+
+  			</div>
+
+
+  			</div>
+
+
+		</div>
+
+
+  		</div>
+  	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<title>product list</title>
+	<style>
+.container{
+  border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+}
+
+.select_div  input[type=text]{
+  float: right;
+}
+.select_div  label{
+  float: right;
+}
+.table_class {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+    width: 100%;
+}
+
+.table_class td, #customers th {
+
+    padding: 8px;
+}
+
+.table_class tr:nth-child(even){background-color: #f2f2f2;}
+
+.table_class tr:hover {background-color: #ddd;}
+
+.table_class th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #585858;
+    color: white;
+}
+</style>
+	
+</head>
+
+<body>
+	<h1>Articles Table</h1>
+	 <table class="table_class">
+      
+       <!-- Header Table -->
+      
+            <tr>
+                <th>id</th>
+                <th>ean</th>
+                <th>sku</th>
+                <th>articleNumber</th>
+                <th>size</th>
+                <th>color</th>
+                <th>quantity</th>
+                <th>description</th>
+                <th>retailPrice</th>
+                <th>materialComposition</th>
+                <th>brand</th>
+                <th>genderId</th>
+                <th>productGroupId</th>
+                <th>additionalInformation</th>
+                <th>originCountryId</th>
+                <th>weight</th>
+                <th>customsTariffNumber</th>
+                <th>careInstructions</th>
+           
+            </tr>
+      
+           <tr th:each="product : ${products}">
+        
+                <td th:text="${product.id}">
+                <td th:text="${product.ean}">
+                <td th:text="${product.sku}">
+                <td th:text="${product.articleNumber}">
+                <td th:text="${product.size}">
+                <td th:text="${product.color}">
+                <td th:text="${product.quantity}">
+                <td th:text="${product.description}">
+                <td th:text="${product.retailPrice}">
+                <td th:text="${product.materialComposition}">
+                <td th:text="${product.brand}">
+                <td th:text="${product.genderId}">
+                <td th:text="${product.productGroupId}">
+                <td th:text="${product.additionalInformation}">
+                <td th:text="${product.originCountryId}">
+                <td th:text="${product.weight}">
+                <td th:text="${product.customsTariffNumber}">
+                <td th:text="${product.careInstructions}">
+               
+            </tr>
+        
+    </table>
+    
+</body>
+</html>

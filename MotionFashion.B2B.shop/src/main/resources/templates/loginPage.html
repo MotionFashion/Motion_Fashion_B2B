@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <title th:utext="${title}"></title>
+    <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+
+         body {
+         font-family: Arial, Helvetica, sans-serif;
+         }
+         th, td {
+         padding: 5px;
+         }
+         td span  {
+         font-size:90%;
+         font-style: italic;
+         color: red;
+         }
+         .error {
+         color: red;
+         font-style: italic;
+         }
+         .register {
+         background-color: #e6e9ef;
+         text-align: center;
+         margin: 10px 430px;
+         padding: 0.1em;
+         height: 25px;
+         border-radius: 25px;
+         }
+         /* Add padding to containers */
+         .container {
+         padding: 0;
+         background-color: white;
+         margin-top: 100px;
+         }
+
+         a {
+         color: dodgerblue;
+         }
+
+         /* Full-width input fields */
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+
+         .loginbtn {
+         background-color: #4CAF50;
+         color: white;
+         padding: 16px 20px;
+         margin: 8px 0;
+         border: none;
+         border-radius: 25px;
+         cursor: pointer;
+         width: 100%;
+         opacity: 0.9;
+
+         }
+
+         .loginbtn:hover {
+         opacity: 1;
+         }
+
+
+
+      </style>
+
+   </head>
+   <body>
+
+   	<div class="container">
+		<div class="panel panel-info">
+
+
+
+   <div class="panel-heading"> <h2 style="margin-left: 60px;">Login</h2> </div>
+   		<div class="panel-body">
+
+
+      <div th:if="${errorMessage != null}"
+           th:utext="${errorMessage}" class="error"></div>
+						<p>this new 1</p>
+      <form th:action="@{/login}"  method="POST">
+
+
+			<div align="center" th:if="${param.error}">
+           	 <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+     	   	</div>
+
+         	<table>
+									
+            <tr>
+               <td>Email </td>
+               <td><input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus></td>
+               <td>
+               
+               </td>
+            </tr>
+            <tr>
+               <td>Password </td>
+               <td><input type="password" id="password" name="password" class="form-control" placeholder="Password" required></td>
+               <td>
+                 
+               </td>
+            </tr>
+            
+            <tr>
+               <td>&nbsp;</td>
+               <td>
+                  <input type="submit" value="Log In" class="loginbtn"/>
+               </td>
+               <td>&nbsp;</td>
+            </tr>
+
+         </table>
+         
+		        
+
+        
+    	  </form>
+    	  
+    	   <form th:action="@{/registration}" method="get">
+		    			<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
+				</form>
+     	</div>
+     </div>
+    </div>
+   </body>
+
+</html>

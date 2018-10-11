@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>B2B Motion Fashion</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <style type="text/css">
+
+    /* logo*/
+    .navbar-brand{
+      height: 60px;
+      padding-top: 1px;
+      padding-left: 0px;
+      padding-right: 5px;
+    }
+
+    .container-fluid{
+      background-color: #E1E5E6;
+      border: none;
+    }
+
+    .navbar{
+      border: none;
+    }
+
+    #header{
+
+      position: absolute;
+      top: 0;
+  }
+
+    .navbar-inverse .navbar-nav >li>a{
+      color: #131212;
+
+    }
+
+    .navbar-nav >li>a{
+      padding-top: 20px;
+
+    }
+
+    /* ********************Footer***********************/
+      .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       padding-top: 15px;
+       background-color: #d5e1e4;
+       color: black;
+       text-align: center;
+       height: 50px;
+
+    }
+
+    .footer a{
+      color: #131212;
+    }
+
+    /* Style inputs */
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    /* Style the container/contact section */
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
+
+    /* Create two columns that float next to eachother */
+    .column {
+        float: right;
+        width: 50%;
+        margin-top: 6px;
+
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    /* vertical line starts here */
+    .vl {
+        border-left: 4px solid #45a049;
+        height: 472px;
+        position: absolute;
+        left: 47%;
+        margin-left: -3px;
+        top: 27px;
+    }/* endss vertical lines style */
+
+    .address{
+      float: left;
+      margin-top: 140px;
+    }
+
+    .modal_header{
+      color: #45a049;
+      text-align: center;
+    }
+    /* ********************Footer***********************/
+
+
+    /* ********************Slider***********************/
+    .carousel-inner> .item>img, .carousel-inner>.item>img, img-responsive, .thumbnail a>img, .thumbnail>img{
+      height: 297px;
+    }
+
+    /* ********************Slider***********************/
+
+    /* ********************images***********************/
+    #campaigns{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .image {
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+    .container:hover .image {
+      opacity: 10;
+    }
+
+    .container:hover .middle {
+      opacity: 1;
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .text {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+    #imagDet{
+      height: 40px;
+      text-align: center;
+    }
+
+    #brandName{
+      background-color: #b5e0ba5c;
+      padding-left: 5px;
+      margin-right: -17px;
+      margin-left: 15px;
+      font-family: Lucida Console;
+    }
+
+    #sku{
+      background-color: #b4dae038;
+      margin-right: -13px;
+       font-family: Lucida Console;
+    }
+
+    #priceRange{
+       background-color: #b5e0ba5c;
+       margin-right: -20px;
+        font-family: Lucida Console;
+    }
+
+    /* ********************images***********************/
+
+  </style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid" id="header">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav">
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-folder-open"> Campaigns <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="campaigns/newCampaigns.html">New Campaigns</a></li>
+          <li><a href="searchCampaigns.html">Campaign Search</a></li>
+          <li><a href="#">Private Campaigns</a></li>
+          <li><a href="#">Request a Campaign</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-calendar"> Bookings <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Campaign Bookings</a></li>
+          <li><a href="#">Accepted Bookings</a></li>
+          <li><a href="#">Booking Archive</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-list"> Orders <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Place Order</a></li>
+          <li><a href="#">Order History</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-envelope"> Billing and Invoices<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Invoices</a></li>
+          <li><a href="#">Pending Payments</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> Account</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><span class="glyphicon glyphicon-king"> Profile</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"> Logout</a></li>
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+</nav><!-- *****************************header****************************-->
+
+
+<!-- *****************************Slider starts here****************************-->
+<div class="container-fluid">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/sl-1.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/sl-2.jpg" alt="Chicago" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/sl-3.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div> <!-- *****************************Slider ends here*******************-->
+
+
+  <!-- *****************************Images starts here*******************-->
+    <div class="container-fluid" id="campaigns">
+        <div class = "row">
+
+          <tr th:each="campaign : ${campaigns}">
+      <div class = "col-sm-6 col-md-4">
+         <a href = "campaign_details.html" class = "thumbnail">
+
+           <img th:src="@{'data:image/jpg;base64,'+${campaign.teaserImage}}"style="width: 600px; height: 300px;" >
+
+           <div class="row" id="imagDet">
+             <div class="col-sm-4" id="brandName"> Drei Master <br>5 Categories</div>
+             <div class="col-sm-4" id="sku">SKU: 40-60 <br>Volume: 1000</div>
+             <div class="col-sm-4" id="priceRange"> Price-Range:<br>50-100 <span class="glyphicon glyphicon-euro"></span></div>
+           </div>
+         </a>
+
+      </div>
+      </tr>
+
+
+
+           </div>
+        </div>
+         <!-- *****************************Images ends here*******************-->
+
+
+
+<!-- **************************************Footer****************************-->
+ <!-- *********************************CONTACT MODAL STARTS*********************-->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal_header">Get in Touch</h2>
+
+          <hr>
+
+          <div class="modal-body">
+
+            <div class="address">
+              <h4>Address:</h4>
+              <p>Motion Fashion Network</p>
+              <p>Osterfelderstrasse 12-14</p>
+              <p>22529 Hamburg, Germany</p>
+              <p>Tel.: +49 40 55 2 880</p>
+            </div>
+
+              <div class="vl"></div>
+              <!-- starts of modal-body-->
+
+                 <div class="column">
+                    <form action="/action_page.php">
+                      <label for="fname">Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                      <label for="email">Email   </label>
+                      <input type="text" id="email" name="email" placeholder="Your email address..">
+                      <label for="country">Country</label>
+                      <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                      </select>
+                      <label for="subject">Message</label>
+                      <textarea id="subject" name="subject" placeholder="Write your message.." style="height:170px"></textarea>
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+
+          </div><!-- End of modal-body-->
+        </div><!-- End of modal-header-->
+      </div><!-- End of modal-content-->
+    </div><!-- End of modal-dialog-->
+  </div> <!-- End of modal-->
+  <!-- *********************************MODAL ENDS*********************-->
+
+  <!-- *********************************ABOUT US MODAL STARTS*********************-->
+  <div class="modal" id="myModal************">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal_header">Get in Touch</h2>
+
+          <hr>
+
+          <div class="modal-body">
+
+            <div class="address">
+              <h4>Address:</h4>
+              <p>Motion Fashion Gmbh</p>
+              <p>Osterfelderstrasse 12-14</p>
+              <p>22529 Hamburg, Germany</p>
+              <p>Tel.: +49 40 55 2 880</p>
+            </div>
+
+
+              <!-- starts of modal-body-->
+
+                 <div class="column">
+                    <form action="/action_page.php">
+                      <label for="fname">Your Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Your email..">
+                      <label for="country">Country</label>
+                      <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                      </select>
+                      <label for="subject">Message</label>
+                      <textarea id="subject" name="subject" placeholder="Write your message.." style="height:170px"></textarea>
+                      <input type="submit" value="Submit">
+                    </form>
+                  </div>
+
+          </div><!-- End of modal-body-->
+        </div><!-- End of modal-header-->
+      </div><!-- End of modal-content-->
+    </div><!-- End of modal-dialog-->
+  </div> <!-- End of modal-->
+  <!-- *********************************ABOUT USMODAL ENDS*********************-->
+
+
+<div class="footer">
+  <a href="#home">Home </a> |
+  <a href="#news">About Us </a> |
+  <a href="#" data-toggle="modal" data-target="#myModal">Contact </a> |
+  <a href="#contact">Term and Conditions</a>
+</div>
+<!-- *********************************Footer ends here*********************-->
+
+</body>
+</html>
