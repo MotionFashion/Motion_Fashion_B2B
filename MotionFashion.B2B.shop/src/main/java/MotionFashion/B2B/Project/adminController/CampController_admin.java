@@ -40,4 +40,12 @@ public class CampController_admin {
 		mv.setViewName("/admin/campaigns/request_campaign");
 		return mv;
 	}
+	
+	@GetMapping("/details")
+	public ModelAndView showCampaignDetails() {
+				
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/admin/campaigns/campaignDetails");
+		return mv;
+	}
 }

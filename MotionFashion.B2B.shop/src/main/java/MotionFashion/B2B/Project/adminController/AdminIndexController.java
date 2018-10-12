@@ -14,7 +14,7 @@ public class AdminIndexController {
 		public ModelAndView showHome() {
 					
 			ModelAndView mv = new ModelAndView();
-			mv.setViewName("/index_admin");
+			mv.setViewName("index_admin");
 			return mv;
 	}
 }

@@ -15,7 +15,7 @@ public class CountryController {
 	public ModelAndView show()
 	{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/countries");
+		mv.setViewName("/admin/countries");
 		return mv;
 	}
 }

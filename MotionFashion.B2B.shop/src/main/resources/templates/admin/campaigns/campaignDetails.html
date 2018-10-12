@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | Campaign Details</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
+  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/campaignsCss/campaignDetailsStyle.css}">
+	
+</head>
+
+<body>
+	<div th:include="header_admin :: copy"></div>
+	<hr>	
+
+  <div class="container-fluid" id="campaign_details">
+    <div class="row">
+      <div class="col-lg-3">
+        <img src="../images/usha.jpg" class="thumbnail" id="campaignImage">
+      </div>
+
+
+
+      <div class="col-lg-6">
+
+        <h2>DreiMaster</h2>
+        <span class="glyphicon glyphicon-home"></span>
+        <br>
+
+       <!-- <table class="campaignDetailsTable">
+          <tr>
+            <th>Category</th>
+            <th>SKU</th>
+            <th>Volume</th>
+            <th>Price-Range</th>
+          </tr>
+         
+          <tr>
+            <td>Brands With EAN Codes, NOS, Plus size, Womenwear</td>
+            <td>10-60</d>
+            <td>5000</td>
+            <td>50-100<span class="glyphicon glyphicon-euro"></span></td>
+
+          </tr>
+
+        </table> -->
+
+
+        <table id="customers">
+            <tr>
+              <th>Category</th>
+              <th>SKU</th>
+              <th>Volume</th>
+              <th>Price-Range</th>
+            </tr>
+            <tr>
+              <td>Brands With EAN Codes, NOS, Plus size, Womenwear</td>
+              <td>10-60</td>
+              <td>5000</td>
+              <td>50-100<span class="glyphicon glyphicon-euro"></span></td>
+            </tr>
+        </table>
+            <!-- Button to trigger modal -->
+
+          <!-- ******************Modal for request offer ***********************************-->
+            <button class="modalButton" data-toggle="modal" data-target="#GSCCModal">Request Offer </button>
+
+            <div id="GSCCModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+                    <h4 class="modal-title" id="myModalLabel">Request Stocklist for DreiMaster now</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>If you request the stocklist from this brand, we will send you asap the latest stock offer. This can take up to 24 hours.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+                    <button type="button" class="btn btn-primary">Rerquest Stocklist</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- ******************Modal for Book now ***********************************-->
+            <button class="modalButton" data-toggle="modal" data-target="#bookNow">Book now </button>
+              <div id="bookNow" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+                    <h4 class="modal-title" id="myModalLabel">Book DreiMaster Now</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/action_page.php">
+                      <!--date picker -->
+                      <label for>
+                        Start Date
+                      <input type="date" name="bday">
+                      </label>
+                    
+
+                    <label class="endDate"for>
+                      End Date
+                      <input type="date" name="bday" >
+                      </label>
+                    </form>
+                     <!--end of date picker -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                   
+
+ </div> <!-- End of col-lg-6-->
+
+<!-- ****************************Contact person starts here**************************************************************-->
+                                
+                                <div class="col-lg-3" id="contactPerson"> 
+                                  <h3 id="contactPersonHeading">Your Contact Person</h3>
+                                  <div class="row">
+                                  <div class="col-sm-4">
+                                    <img src="../images/contactPerson.jpg" class="thumbnail" id="contactPersonImage">
+                                    </div>
+                                     <div class="col-sm-8">
+                                      <p> <span class="glyphicon glyphicon-user"></span> Rayhanur Rahman</p>
+                                      <p> <span class="glyphicon glyphicon-phone-alt"></span> (+49) 22 33 55 33</p>
+                                      <span class="glyphicon glyphicon-envelope"></span><a href="mailto:rayhan@example.com">  rayhan@example.com</a>
+                                     </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                         
+                     <hr>
+  <!-- **********************************************Mode photos *********************************************-->
+
+                          <h2 class="moodHeading">Mood Pictures</h2>
+
+                           <div class="container-fluid" id="campaigns">
+                                <div class = "row">
+                                   
+                                   <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/1.jpg" class="image">
+                                      </a>
+                                      
+                                   </div>
+                                   
+                                   <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/2.jpg" class="image" alt = "Generic placeholder thumbnail">
+                                      </a>
+                            
+                                   </div>
+                                   
+                                   <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/3.jpg" class="image" alt = "Generic placeholder thumbnail">
+                                      </a>
+
+
+                                   </div>
+
+
+                                      <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+                                      </a>
+                                   </div>
+                                   
+                                   <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/6.jpg" class="image" alt = "Generic placeholder thumbnail">
+                                      </a>
+                                   </div>
+                                   
+                                   <div class = "col-sm-6 col-md-4">
+                                      <a href = "#" class = "thumbnail">
+                                         <img src = "../images/1.jpg" class="image" alt = "Generic placeholder thumbnail">
+                                      </a>
+                                   </div>
+                                   
+                               </div>
+                           </div>
+                      <!-- *****************************Images ends here*******************-->
+
+
+                    <!-- ******************************************Calendar starts here************************************ -->
+                    <div class="container">
+                    <div class="divcalendar">
+
+                    <div id="calendaroverallcontrols">
+
+                      <div id="calendarmonthcontrols">
+                        <a id="btnPrevYr" href="#" title="Previous Year"><span></span></a> 
+
+                           <a id="btnPrev" href="#" title="Previous Month"><span><</span></a>
+                            
+
+                           <div id="monthandyear"></div>
+
+
+                          <a id="btnNext" href="#" title="Next Month"><span>></span></a>
+
+                        <a id="btnNextYr" href="#" title="Next Year"><span></span></a>      
+                      </div>
+                    </div>
+                        <!-- extra  -->
+                    <div id="divcalendartable"></div>
+                  </div>
+                  </div>
+                <!--**************************************Java Script*********************************** -->
+                      <script type="text/javascript">
+                        var Calendar = function (calen) {
+                          //Store div id
+                          this.divId = calen.ParentID;
+                          // Days of week, starting on Sunday
+                          this.DaysOfWeek = calen.DaysOfWeek;
+                          // Months, stating on January
+                          this.Months = calen.Months;
+                          // Set the current month, year
+                          var d = new Date();
+                          this.CurrentMonth = d.getMonth();
+                          this.CurrentYear = d.getFullYear();
+                          var f = calen.Format;
+                          //this.f = typeof(f) == 'string' ? f.charAt(0).toUpperCase() : 'M';
+                          if (typeof(f) == 'string') {
+                              this.f = f.charAt(0).toUpperCase();
+                          } else {
+                              this.f = 'M';
+                          }
+                      };
+                      // Goes to next month
+                      Calendar.prototype.nextMonth = function () {
+                          if (this.CurrentMonth == 11) {
+                              this.CurrentMonth = 0;
+                              this.CurrentYear++;
+                          } else {
+                              console.log("this.CurrentMonth == ", this.CurrentMonth);
+                              this.CurrentMonth++;
+                          }
+                          this.showCurrent();
+                      };
+                      // Goes to previous month
+                      Calendar.prototype.previousMonth = function () {
+                          if (this.CurrentMonth == 0) {
+                              this.CurrentMonth = 11;
+                              this.CurrentYear--;
+                          } else {
+                              this.CurrentMonth--;
+                          }
+                          this.showCurrent();
+                      };
+                      Calendar.prototype.previousYear = function () {
+                          this.CurrentYear--;
+                          this.showCurrent();
+                      }
+                      Calendar.prototype.nextYear = function () {
+                          this.CurrentYear++;
+                          this.showCurrent();
+                      }
+                      // Show current month
+                      Calendar.prototype.showCurrent = function () {
+                          this.Calendar(this.CurrentYear, this.CurrentMonth);
+                      };
+                      // Show month (year, month)
+                      Calendar.prototype.Calendar = function (y, m, n) {
+                          typeof(y) == 'number' ? this.CurrentYear = y : null;
+                          typeof(y) == 'number' ? this.CurrentMonth = m : null;
+                          typeof(y) == 'number' ? this.CurrDate = n : null;
+                          // 1st day of the selected month
+                          var firstDayOfCurrentMonth = new Date(y, m, 1).getDay();
+                          // Last date of the selected month
+                          var lastDateOfCurrentMonth = new Date(y, m + 1, 0).getDate();
+                          // Last day of the previous month
+                          var lastDateOfLastMonth = m == 0 ? new Date(y - 1, 11, 0).getDate() : new Date(y, m, 0).getDate();
+                          // Write selected month and year. This HTML goes into <div id="year"></div>
+                          //var yearhtml = '<span class="yearspan">' + y + '</span>';
+                          // Write selected month and year. This HTML goes into <div id="month"></div>
+                          //var monthhtml = '<span class="monthspan">' + this.Months[m] + '</span>';
+                          // Write selected month and year. This HTML goes into <div id="month"></div>
+                          var monthandyearhtml = '<span id="monthandyearspan">' + this.Months[m] + ' - ' + y + '</span>';
+                          var html = '<table>';
+                          // Write the header of the days of the week
+                          html += '<tr>';
+                          for (var i = 0; i < 7; i++) {
+                              html += '<th class="daysheader">' + this.DaysOfWeek[i] + '</th>';
+                          }
+                          html += '</tr>';
+                          //this.f = 'X';
+                          var p = dm = this.f == 'M' ? 1 : (firstDayOfCurrentMonth == 0 ? -5 : 2);
+                          var cellvalue;
+                          for (var d, i = 0, z = 0; z < 6; z++) {
+                              html += '<tr>';
+                              for (var k = 0; k < 7; k++) {
+                                  d = i + dm - firstDayOfCurrentMonth;
+                                  // Dates from prev month
+                                  if (d < 1) {
+                                      cellvalue = lastDateOfLastMonth - firstDayOfCurrentMonth + p++;
+                                      html += '<td id="prevmonthdates">' +
+                                              '<span id="cellvaluespan">' + (cellvalue) + '</span><br/>' +
+                                              '</td>';
+                                      // Dates from next month
+                                  } else if (d > lastDateOfCurrentMonth) {
+                                      html += '<td id="nextmonthdates">' + (p++) + '</td>';
+                                      // Current month dates
+                                  } else {
+                                      var lDate = new Date();
+                                      if (d == lDate.getDate() && this.CurrentMonth == lDate.getMonth() && this.CurrentYear == lDate.getFullYear()) {
+                                          html += '<td id="currentmonthdates" class="currentDay">' + (d) + '</td>';
+                                      } else {
+                                          html += '<td id="currentmonthdates">' + (d) + '</td>';
+                                      }
+                                      p = 1;
+                                  }
+                                  if (i % 7 == 6 && d >= lastDateOfCurrentMonth) {
+                                      z = 10; // no more rows
+                                  }
+                                  i++;
+                              }
+                              html += '</tr>';
+                          }
+                          // Closes table
+                          html += '</table>';
+                          document.getElementById("monthandyear").innerHTML = monthandyearhtml;
+                          document.getElementById(this.divId).innerHTML = html;
+                      };
+                      // On Load of the window
+                      window.onload = function () {
+                          // Start calendar
+                          var c = new Calendar({
+                              ParentID: "divcalendartable",
+                              DaysOfWeek: [
+                                  'MON',
+                                  'TUE',
+                                  'WED',
+                                  'THU',
+                                  'FRI',
+                                  'SAT',
+                                  'SUN'
+                              ],
+                              Months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                              Format: 'dd/mm/yyyy'
+                          });
+                          c.showCurrent();
+                          // Bind next and previous button clicks
+                          getId('btnPrev').onclick = function () {
+                              c.previousMonth();
+                          };
+                          getId('btnPrevYr').onclick = function () {
+                              c.previousYear();
+                          };
+                          getId('btnNext').onclick = function () {
+                              c.nextMonth();
+                          };
+                          getId('btnNextYr').onclick = function () {
+                              c.nextYear();
+                          };
+                          // Get element by id
+                          function getId(id) {
+                              return document.getElementById(id);
+                          }
+                      }
+                      </script>
+      <!--**************************************Java Script*********************************** -->
+    <!--**************************************Calendar ends here*********************************** -->
+
+           <div class="imageDownload">
+
+            <h2 >Product Images <a href="demo.zip" class="btn btn-info" role="button"> Download All Images Via Website</a> <a href="https://www.dropbox.com/sh/ywfg7lk0arbxjz2/AABYjdghGSrCeBj5m4t8Epe0a?dl=0" class="btn btn-info" role="button">
+             Download From Dropbox</a> </h2>
+             
+            </div>
+         
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-2">
+                  <a href="../images/1.jpg" download="w3logo" class="thumbnail">
+                    <img src="../images/1.jpg" alt="W3Schools">
+                  </a>
+              </div>
+
+
+             <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                        <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+                  </a>
+              </div>
+
+              <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                      <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+                  </a>
+              </div>
+             <div class="col-sm-2">
+                <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+              <div class="col-sm-2">
+                 <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+              <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+            </div>
+
+            <div class="row">
+             <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+          
+              <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+         
+
+         
+             <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+              <div class="col-sm-2">
+                  <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+   
+
+       
+             <div class="col-sm-2">
+                <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+
+               </div>
+
+              <div class="col-sm-2">
+                <a href = "#" class = "thumbnail">
+                 <img src = "../images/5.jpg" class="image" alt = "Generic placeholder thumbnail">
+               </a>
+              </div>
+
+            
+
+
+          </div>
+
+        </div>
+
+<!--
+      <script type="text/javascript">
+          function prepHref(linkElement) {
+              var myDiv = document.getElementById('fullsized_image_holder');
+              var myImage = myDiv.children[0];
+              linkElement.href = myImage.src;
+          }
+    </script>
+          <div id="fullsized_image_holder"><img src="W3logo.jpg" style="margin-top: 0px;"></div>
+          <a href="#" onclick="prepHref(this)" download>Click here to download image</a>
+        -->
+        
+        <div th:include="footer_admin :: copy"></div>
+
+</body>
+</html>
