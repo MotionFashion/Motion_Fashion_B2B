@@ -32,7 +32,7 @@ public class LoginController {
     @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("loginPage");
+        modelAndView.setViewName("login_demo");
         return modelAndView;
     }
 
@@ -96,7 +96,7 @@ public class LoginController {
         modelAndView.addObject("userName", "Welcome " + user.getFirstname() + " " + user.getLastname() + " (" + user.getEmail() + ")");
         modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
         modelAndView.addObject("campaigns",campaigns);
-        modelAndView.setViewName("index_admin");//home_page
+        modelAndView.setViewName("index_admin");//admin home_page
         return modelAndView;
     }
 

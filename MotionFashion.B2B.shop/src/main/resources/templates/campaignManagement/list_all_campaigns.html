@@ -7,9 +7,23 @@
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    
+	    
 	    <link rel="stylesheet" type="text/css" href="sorting.js">
+	     <link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	  <link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
 
 		<style type="text/css">
+		
+		div#body1 {
+        background-color: white;
+        }
+        
+         div#selectionBox{
+        	width: 100px;
+        	height: 50px;
+        
+        }
 
 		input[type=search]{
 			float: right;
@@ -59,7 +73,16 @@
 
 	    }
 
-
+	 
+        
+        #options{
+        	height:30px;
+        	padding: 5px;
+        }
+        
+        #searchBox{
+        	float: right;
+        }
 
 
 		hr{
@@ -71,31 +94,29 @@
 	</head>
 
 	<body>
+	<div th:include="header_admin :: copy"></div>
+	
 		<h2>CAMPAIGN MANAGEMENT</h2>
 		<h4>10 CAMPAIGNS TOTAL</h4>
 		<hr>
-		   <div class="container-fluid">
-		   <div class="row">
-		   	<div class ="col-lg-10 col-md-6">
-		   			Show
-					<select id="options">
-					  <option value="volvo">10</option>
-					  <option value="saab">25</option>
-					  <option value="opel">50</option>
-					  <option value="audi">100</option>
-					</select>
-					  entries
+		   <div class="container-fluid" id="body1">
+		    <div class="row">
+            <div class ="col-lg-10 col-md-6" id="selectionBox">
+                    
+                    <select id="options" name="options">
+                      <option value="volvo">10</option>
+                      <option value="saab">25</option>
+                      <option value="opel">50</option>
+                      <option value="audi">100</option> 
+                    </select>
+                    </div> 
+			          <!--search box -->
+			          <div class="col-lg-2 col-md-6" id="searchBox">
+			             <input type="search" placeholder="Search.."> 
+			           </div>
 		   		</div>
-		   		<!--search box -->
-		   		<div class="col-lg-2 col-md-6" id="searchButton">
-		   			 <input type="search" placeholder="Search..">
-		   			</div>
-		   		</div>
-
-
 
 		    <br>
-
 
 			<div class="row">
 				<div class="col-md-12  col-sm-6">
@@ -103,32 +124,32 @@
 				    <thead>
 				    	<tr>
 				        <th>Teaser
-				        	<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        	<ul>
+				        	<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+				        	
 				        </th>
 				        <th>Status
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Title
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Subtitle
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Created at
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Author
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Products
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Images
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				        <th>Actions
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
+							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
 				        </th>
 				      </tr>
 
@@ -149,12 +170,14 @@
                        <a href="/campaign/delete_campaign/1" th:href="@{/campaign/delete_campaign/__${campaign.campaign_id}__}" class="w3-button w3-green">Delete</a>
 
                    </td>
-            </tr>
+            	</tr>
 
 				    </thead>
 				</table>
 			</div>
 			</div>
 			</div>
+			
+			<div th:include="footer_admin :: copy"></div>
 	</body>
 	</html>

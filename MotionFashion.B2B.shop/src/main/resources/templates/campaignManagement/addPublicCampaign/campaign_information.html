@@ -9,9 +9,15 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  
+	  <link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	  <link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
 
 
   <style type="text/css">
+  div#body1{
+  	background-color:white;
+  }
 
 
   	#check{
@@ -49,13 +55,14 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+<div th:include="header_admin :: copy"></div>
+	<div class="container-fluid" id="body1">
  	<h3>EDIT EDIT CAMPAIGN</h3>
     <h4>NEW CAMPAIGN</h4>
     <hr>
     <ul class="nav nav-tabs">
-      <li class="active"><a href="#">Campaign Information</a></li>
-      <li><a href="products.html">Products</a></li>
+      <li class="active"><a href="/campaign/campaign_create_info">Campaign Information</a></li>
+      <li><a href="/campaign/campaign_create_pro/{campaign_id}">Products</a></li>
       <li><a href="settings.html">Settings</a></li>
     </ul>
 
@@ -122,7 +129,9 @@
     <button class="btn btn-success" type="submit">Save Images</button>
   </form>
 </div>
-</div>
+
+
+<div th:include="footer_admin :: copy"></div>
 
 </body>
 </html>
