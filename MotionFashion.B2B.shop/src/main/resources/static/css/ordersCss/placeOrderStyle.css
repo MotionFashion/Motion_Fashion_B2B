@@ -1,29 +1,8 @@
 @charset "ISO-8859-1";
 
-	div#body1 {
-        background-color: white;
-        }
-	
-
-    input[type=search]{
-      float: right;
-      margin-right: 5px;
-      border-radius: 10px;
-      outline: 0;
-    }
 
     h2{
       margin-left: 8px;
-    }
-
-    h4{
-      margin-left: 8px;
-    }
-  
-    button, input, select, textarea{
-      border-radius: 10px;
-      outline: 0;
-      padding: 5px;
     }
 
     table {
@@ -31,19 +10,20 @@
       border-collapse: collapse;
       border-radius: 10px;
       overflow: hidden;
-      background: #CBD6D5;
+      
       width: 100%;
     }
 
-    th{
+   th{
       padding-left: 8px;
       padding-right: 8px;
       padding-top: 2px;
       padding-bottom: 2px;
       border: 1px solid white; 
+      background: #CBD6D5;
     }
 
-
+  
     #sort{
       float: right;
       border: none;
@@ -67,8 +47,8 @@
           background-color: #CBD6D5;
           border-radius: 10px;
         }
-        
-        #selectionBox{
+	
+	#selectionBox{
         	width: 100px;
         	height: 50px;
         
@@ -82,4 +62,3 @@
         #searchBox{
         	float: right;
         }
-    

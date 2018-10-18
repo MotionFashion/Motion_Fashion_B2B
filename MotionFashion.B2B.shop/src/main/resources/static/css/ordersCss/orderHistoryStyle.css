@@ -5,10 +5,6 @@
       margin-left: 8px;
     }
 
-    h4 {
-      margin-left: 8px;
-    }
-
     table {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
       border-collapse: collapse;
@@ -26,13 +22,42 @@
       border: 1px solid white; 
     }
 
+  
+    #sort{
+      float: right;
+      border: none;
+      background: #CBD6D5;
+    }
+
     hr{
-        border: 2px solid #CBD6D5;
+            border: 2px solid #CBD6D5;
         }
 
-      .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover{
+        .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover{
           border-top: 4px solid #CBD6D5;
 
         }
 
-   
+         a{
+          color:black;
+        }
+
+        .pager li>a, .pager li>span{
+          background-color: #CBD6D5;
+          border-radius: 10px;
+        }
+	
+	#selectionBox{
+        	width: 100px;
+        	height: 50px;
+        
+        }
+        
+        #options{
+        	height:30px;
+        	padding: 5px;
+        }
+        
+        #searchBox{
+        	float: right;
+        }
