@@ -1,131 +1,140 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>List all campaigns</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	    <link rel="stylesheet" type="text/css" href="sorting.js">
-
-		<style type="text/css">
-
-		input[type=search]{
-			float: right;
-			margin-right: 5px;
-			border-radius: 10px;
-			outline: 0;
-		}
-
-		h2{
-			margin-left: 8px;
-		}
-
-		h4{
-			margin-left: 8px;
-		}
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>B2B | List all campaigns</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-git.js"></script>
 	
-		button, input, select, textarea{
-			border-radius: 10px;
-			outline: 0;
-		}
-
-		table {
-		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-		  border-collapse: collapse;
-		  border-radius: 10px;
-		  overflow: hidden;
-		  background: #CBD6D5;
-		  width: 100%;
-		}
-
-		th{
-	      padding-left: 8px;
-	      padding-right: 8px;
-	      padding-top: 2px;
-	      padding-bottom: 2px;
-	      border: 1px solid white; 
-	    }
-		#sort{
-			float: right;
-			border: none;
-			background: #CBD6D5;
-		}
-
-		hr{
-            border: 2px solid #CBD6D5;
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="sorting.js">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/headerStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bookingsCss/acceptedBookingsStyle.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footerStyle.css}">
+	
+	<style>
+	.ui-icon, .ui-widget-content .ui-icon 
+	{
+	background-image: none;
+	}
+	
+	div#body1 {
+        background-color: white; !important;
         }
-		</style>
-
-
-	</head>
-
-	<body>
-		<h2>CAMPAIGN MANAGEMENT</h2>
-		<h4>10 CAMPAIGNS TOTAL</h4>
-		<hr>
-		   <div class="container-fluid">
-		   <div class="row">
-		   	<div class ="col-lg-10 col-md-6">
-		   			Show
-					<select id="options">
-					  <option value="volvo">10</option>
-					  <option value="saab">25</option>
-					  <option value="opel">50</option>
-					  <option value="audi">100</option>
-					</select>
-					  entries
-		   		</div>	
-		   		<!--search box -->
-		   		<div class="col-lg-2 col-md-6" id="searchButton">
-		   			 <input type="search" placeholder="Search.."> 
-		   			</div>
-		   		</div>
+      
+      #tdBackground{
+      	
+      	background-color: white;
+      }
+	</style>
 	
-		    
-		    
-		    <br>
+</head>
 
-		    	
-			<div class="row">
-				<div class="col-md-12  col-sm-6">
-				<table>
-				    <thead>
+
+<body>
+<div th:include="header_admin :: copy"></div>
+	<div th:fragment="copy">
+        	<h2>CAMPAIGN MANAGEMENT</h2>
+			<h4>10 CAMPAIGNS TOTAL</h4>
+		<hr>
+           <div class="container-fluid" id="body1">
+           <div class="row">
+            <div class ="col-lg-10 col-md-6" id="selectionBox">
+                    
+                    <select id="options" name="options">
+                      <option value="volvo">10</option>
+                      <option value="saab">25</option>
+                      <option value="opel">50</option>
+                      <option value="audi">100</option> 
+                    </select>
+                     
+                </div>  
+                <!--search box -->
+                <div class="col-lg-2 col-md-6" id="searchBox">
+                     <input type="search" placeholder="Search.."> 
+                    </div>
+                </div>
+    
+            
+            
+            <br>
+
+                
+            <div class="row">
+                <div class="col-md-12  col-sm-6">
+                <table class="table table-bordered">
+                    <thead>
+                        <thead>
 				    	<tr>
-				        <th>Teaser
-				        	<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        	<ul>
-				        </th>
-				        <th>Status
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Title
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Subtitle
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Created at
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Author
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Products
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <th>Images
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
-				        <td>Actions
-							<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></button>
-				        </th>
+					        <th>Teaser
+					        	<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        
+					        </th>
+					        <th>Status
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Title
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Subtitle
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Created at
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Author
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Products
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Images
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
+					        <th>Actions
+								<button onclick="sortListDir()"	id="sort"><span class="glyphicon glyphicon-sort"></span></button>
+					        </th>
 				      </tr>
 
 				    </thead>
-				</table>
-			</div>
-			</div>
-			</div>
-	</body>
-	</html>	
+
+                   
+                     <tbody id="tdBackground">
+				      <tr>
+				        <td>Doe</td>
+				        <td>john@example.com</td>
+				        <td>Mary</td>
+				        <td>Moe</td>
+				        <td>Doe</td>
+				        <td>john@example.com</td>
+				        <td>Mary</td>
+				        <td>Moe</td>
+				        <td>Moe</td>
+				      </tr>
+				    </tbody>
+                </table>
+                
+                 <ul class="pager">
+		            <li class="previous"><a href="#">Previous Page</a></li>
+		            <li class="next"><a href="#">Next Page</a></li>
+		      </ul>
+		      
+            </div>
+            </div>
+            </div>
+            </div>
+            <div th:include="footer_admin :: copy"></div>
+            
+            <script>$( "th" ).resizable();</script>
+    </body>
+    </html> 
